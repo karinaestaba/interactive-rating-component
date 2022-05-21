@@ -65,7 +65,8 @@ button
   background-color: $dark_blue
   padding: 26px
   border-radius: 16px
-  height: 52vh
+  height: 365px
+  max-width: 409px
 
   &.submited
     display: none
@@ -162,7 +163,45 @@ input[type=radio]
       &:hover
         background-color: red
         color: $white
-    
+
+@media (min-width: 998px)
+  body
+    font-size: 15px
+    line-height: 22px
+
+  .card
+    height: 414px
+    padding: 31px
+
+    .icon
+      width: 48px
+      height: 48px
+      margin-bottom: 29px
+
+    .title
+      font-size: 28px
+      line-height: 48px
+      margin-bottom: 3px
+
+    .header-icon
+      img
+        margin-top: 16px
+        width: 163px
+
+    .rate-result
+      margin-top: 23px
+      padding-left: 18px
+      padding-rights: 18px
+
+  input[type="radio"]
+    + label::before
+      width: 51px
+      height: 51px
+
+  button
+    width: 98%
+    margin-top: 33px
+
 @keyframes bounceIn
   0%
     animation-timing-function: ease-in
@@ -206,3 +245,4 @@ input[type=radio]
   100%
     opacity: 1
     transform: rotate(0) scale(1)
+  
