@@ -1,0 +1,122 @@
+$orange: hsl(25, 97%, 53%)
+$white: hsl(0, 0%, 100%)
+$light_grey: hsl(217, 12%, 63%)
+$medium_grey: hsl(216, 12%, 54%)
+$dark_blue: hsl(213, 19%, 18%)
+$opacity_blue: #b2b8c214
+$very_dark_blue: hsl(216, 12%, 8%)
+$font_family: 'Overpass', sans-serif
+
+*,
+*::after,
+*::before
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html,
+body
+  height: 100%
+
+body
+  min-height: 100vh
+  display: grid
+  grid-template-columns: 1fr
+  align-content: center
+  font-size: 14px
+  line-height: 21px
+  font-family: $font_family
+  color: $medium_grey
+  background-color: $very_dark_blue
+
+button
+  background-color: $orange
+  color: $white
+  text-transform: uppercase
+  width: 100%
+  padding: 13px
+  border: none
+  outline: 0
+  border-radius: 40px
+  font-weight: 700
+  font-family: $font_family
+  font-size: 16px
+  line-height: 21px
+  letter-spacing: 1px
+  margin-top: 23px
+  cursor: pointer
+  
+  &:hover
+    background-color: darken($orange, 20%)
+
+  &:active
+    background-color: darken($orange, 10%)
+
+  &:focus
+    background-color: darken($orange, 15%)
+
+.container
+  max-width: 1220px
+  margin: 0 auto
+  padding: 20px
+
+.card
+  background-color: $dark_blue
+  padding: 26px 28px
+  border-radius: 16px
+  min-height: 52vh
+
+  h1
+    font-size: 24px
+    line-height: 30px
+    color: $white
+    margin-bottom: 12px
+
+  .icon
+    background-color: $opacity_blue
+    width: 40px
+    height: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    margin-bottom: 20px
+
+  p
+    margin-bottom: 31px
+
+.fedback-rating
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  justify-content: space-between
+  list-style: none
+  counter-reset: listCounter
+
+input[type=radio]
+  display: none
+
+  + label
+    position: relative
+    cursor: pointer
+    counter-increment: listCounter
+
+    &::before
+      content: counter(listCounter)
+      background-color:  $opacity_blue
+      cursor: pointer
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      width: 40px
+      height: 40px
+      border-radius: 50%
+      font-weight: 700
+
+  &:checked
+    + label::before
+      background: $light_grey
+    
+
+
