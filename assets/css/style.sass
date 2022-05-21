@@ -7,6 +7,13 @@ $opacity_blue: #b2b8c214
 $very_dark_blue: hsl(216, 12%, 8%)
 $font_family: 'Overpass', sans-serif
 
+@mixin gradient
+  background: rgb(33,40,50)
+  background: -moz-linear-gradient(180deg, rgba(33,40,50,1) 27%, rgba(23,30,40,1) 100%)
+  background: -webkit-linear-gradient(180deg, rgba(33,40,50,1) 27%, rgba(23,30,40,1) 100%)
+  background: linear-gradient(180deg, rgba(33,40,50,1) 27%, rgba(23,30,40,1) 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#212832",endColorstr="#171e28",GradientType=1)
+
 *,
 *::after,
 *::before
@@ -64,9 +71,9 @@ button
   padding: 23px
 
 .card
-  background-color: $dark_blue
+  @include gradient
   padding: 26px
-  border-radius: 16px
+  border-radius: 33px
   height: 365px
   max-width: 409px
 
