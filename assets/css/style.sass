@@ -49,11 +49,13 @@ button
   &:hover
     background-color: $white
     color: $orange
+    transition: all 1s
 
   &:active
     background-color: darken($white, 10%)
 
   &:focus
+    color: $orange
     background-color: darken($white, 15%)
 
 .container
@@ -164,6 +166,10 @@ input[type=radio]
         background-color: red
         color: $white
 
+form
+  &.invalid
+    animation: shake 1s ease 0s 1 normal forwards
+
 @media (min-width: 998px)
   body
     font-size: 15px
@@ -246,3 +252,25 @@ input[type=radio]
     opacity: 1
     transform: rotate(0) scale(1)
   
+@keyframes shake
+  0%,
+  100%
+    transform: translateX(0)
+    
+  10%,
+  30%,
+  50%,
+  70%
+    transform: translateX(-10px)
+
+  20%,
+  40%,
+  60%
+    transform: translateX(10px)
+
+  80%
+    transform: translateX(8px)
+
+  90%
+    transform: translateX(-8px)
+    
