@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
@@ -39,6 +39,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
+- Animations
 - Mobile-first workflow
 - Vanilla javascript
 
