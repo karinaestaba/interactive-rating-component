@@ -47,26 +47,40 @@ button
   cursor: pointer
   
   &:hover
-    background-color: darken($orange, 20%)
+    background-color: $white
+    color: $orange
 
   &:active
-    background-color: darken($orange, 10%)
+    background-color: darken($white, 10%)
 
   &:focus
-    background-color: darken($orange, 15%)
+    background-color: darken($white, 15%)
 
 .container
   max-width: 1220px
   margin: 0 auto
-  padding: 20px
+  padding: 23px
 
 .card
   background-color: $dark_blue
-  padding: 26px 28px
+  padding: 26px
   border-radius: 16px
-  min-height: 52vh
+  height: 52vh
 
-  h1
+  &.submited
+    display: none
+
+  &.ready
+    display: block
+    animation: bounceIn 1s ease 0s 1 normal forwards
+
+    .header-icon
+      animation: swirlIn 1s ease 0s 1 normal forwards
+
+    .rate-result
+      animation: bounceIn 2s ease 0s 1 normal forwards
+
+  .title
     font-size: 24px
     line-height: 30px
     color: $white
@@ -85,13 +99,33 @@ button
   p
     margin-bottom: 31px
 
-.fedback-rating
-  display: flex
-  flex-wrap: wrap
-  gap: 10px
-  justify-content: space-between
-  list-style: none
-  counter-reset: listCounter
+.rate
+  &-feedback
+    display: flex
+    flex-wrap: wrap
+    gap: 10px
+    justify-content: space-between
+    list-style: none
+    counter-reset: listCounter
+
+  &-voted
+    text-align: center
+    display: none
+
+    .header-icon
+      img
+        width: 144px
+        margin-top: 10px
+
+  &-result
+    background-color: $opacity_blue
+    color: #c97437
+    display: inline-block
+    padding: 7px 13px
+    border-radius: 20px
+    font-size: 15px
+    margin-top: 17px
+    margin-bottom: 27px
 
 input[type=radio]
   display: none
@@ -101,9 +135,15 @@ input[type=radio]
     cursor: pointer
     counter-increment: listCounter
 
+    &:hover
+      &::before
+        background-color: $orange
+        color: $white
+        transition: 1s all
+
     &::before
       content: counter(listCounter)
-      background-color:  $opacity_blue
+      background-color: $opacity_blue
       cursor: pointer
       display: flex
       flex-direction: column
@@ -117,6 +157,52 @@ input[type=radio]
   &:checked
     + label::before
       background: $light_grey
+      color: $white
+
+      &:hover
+        background-color: red
+        color: $white
     
+@keyframes bounceIn
+  0%
+    animation-timing-function: ease-in
+    opacity: 0
+    transform: scale(0)
 
+  38%
+    animation-timing-function: ease-out
+    opacity: 1
+    transform: scale(1)
 
+  55%
+    animation-timing-function: ease-in
+    transform: scale(0.7)
+
+  72%
+    animation-timing-function: ease-out
+    transform: scale(1)
+
+  81%
+    animation-timing-function: ease-in
+    transform: scale(0.84)
+
+  89%
+    animation-timing-function: ease-out
+    transform: scale(1)
+
+  95%
+    animation-timing-function: ease-in
+    transform: scale(0.95)
+  
+  100%
+    animation-timing-function: ease-out
+    transform: scale(1)
+
+@keyframes swirlIn
+  0%
+    opacity: 0
+    transform: rotate(-540deg) scale(0)
+
+  100%
+    opacity: 1
+    transform: rotate(0) scale(1)

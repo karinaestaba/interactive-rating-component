@@ -10,48 +10,53 @@
 </head>
 <body>
   <main class="container">
-    <section class="card rate-state">
+    <form class="card rate-state" id="fedbackRatingForm" action="/">
       <figure class="icon">
         <img src="assets/images/icon-star.svg" alt="Star" width="15">
       </figure>
-      <h1>How did we do?</h1>
+      <h1 class="title">How did we do?</h1>
     
       <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
 
-      <ol class="fedback-rating">
+      <ol class="rate-feedback">
         <li class="custom-radio">
-          <input type="radio" name="radioOption" id="radioOption1">
+          <input type="radio" name="radioOption" id="radioOption1" value="1">
           <label for="radioOption1"></label>
         </li>
         <li class="custom-radio">
-          <input type="radio" name="radioOption" id="radioOption2">
+          <input type="radio" name="radioOption" id="radioOption2" value="2">
           <label for="radioOption2"></label>
         </li>
         <li class="custom-radio">
-          <input type="radio" name="radioOption" id="radioOption3">
+          <input type="radio" name="radioOption" id="radioOption3" value="3">
           <label for="radioOption3"></label>
         </li>
         <li class="custom-radio">
-          <input type="radio" name="radioOption" id="radioOption4">
+          <input type="radio" name="radioOption" id="radioOption4" value="4">
           <label for="radioOption4"></label>
         </li>
         <li class="custom-radio">
-          <input type="radio" name="radioOption" id="radioOption5">
+          <input type="radio" name="radioOption" id="radioOption5" value="5" checked>
           <label for="radioOption5"></label>
         </li>
       </ol>
-      <button>
+      <button id="submitRating" type="submit">
         Submit
       </button>
+    </form>
+
+    <section class="card rate-voted" id="fedbackRatingFinish">
+      <figure class="header-icon">
+        <img src="assets/images/illustration-thank-you.svg" alt="Star" width="150">
+      </figure>
+      <span class="rate-result">
+        You selected <span id="rate-selected"></span> out of 5
+      </span>
+      <h2 class="title">Thank you!</h2>
+      <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
     </section>
-    
-    <!-- You selected
-    out of 5
-    
-  Thank you!
-  
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch! -->
 </main>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
